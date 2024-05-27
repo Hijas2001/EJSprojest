@@ -1,0 +1,40 @@
+<!--include header-->
+  <%-include('include/_header')%>
+
+<!--include header-->
+
+ <!--main section-->
+ <main id="site-main">
+  <div class="container">
+      <div class="box-nav d-flex justify-between">
+          <a href="/add-user" class="border-shadow">
+              <span class="text-gradient">New User <i class="fa-solid fa-user"></i></span>
+          </a>
+      </div>
+
+      <form action="/" method="POST">
+          <table class="table thead-dark">
+              <thead class="thead-dark">
+                  <tr> <!-- Missing opening <tr> tag -->
+                      <th>ID</th> <!-- Example column header -->
+                      <th>Name</th>
+                      <th>@Email</th>
+                      <th>Gender</th>
+                      <th>Status</th>
+                      <th>Action</th> <!-- Example column header -->
+                      <!-- Add additional column headers as needed -->
+                  </tr> <!-- Missing closing </tr> tag -->
+              </thead>
+              <tbody>
+                <%-include('include/_show')%>
+              </tbody>
+              <!-- Add table body and rows if needed -->
+          </table>
+      </form>
+  </div>
+</main>
+<!--main section-->
+
+<!--include footer-->
+<%-include('include/_footer')%>
+<!--include footer-->
