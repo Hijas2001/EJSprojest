@@ -30,3 +30,34 @@ exports.update_user = (req, res) => {
 }
 
 
+exports.search_user = (req, res) => {
+    const searchQuery = req.query.search;
+
+    if (!searchQuery) {
+        res.render('index', { users: [], message: "Search query is empty" });
+        return;
+    }
+
+    axios.get('http://localhost:3000/api/users/search', { params: { name: searchQuery  } })
+        .then(function (response) {
+            if (response.data.length === 0) {
+                res.render('index', { users: [], message: "User not found" });
+            } else {
+   
+                    res.render('index', { users: response.data, message: null });
+
+            }
+        })
+        .catch(err => {
+            console.error(err);
+            if (err.response && err.response.status === 404) {
+                res.render('index', { users: [], message: "User not found" });
+            } else {
+                res.status(500).render('index', { users: [], message: "An error occurred" });
+            }
+        });
+};
+
+
+
+

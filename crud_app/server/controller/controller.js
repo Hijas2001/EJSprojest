@@ -96,8 +96,22 @@ exports.delete = (req, res) => {
         });
 };
 
-exports.search = (req,res)=>{
-    const data = req.body
 
-    console.log(data);
-}
+
+
+exports.search = (req, res) => {
+    const name = req.query.name;
+  console.log(name);
+    Userdb.find({ name: new RegExp(name, 'i') }) // Case insensitive search
+        .then(data => {
+            if (!data.length) {
+                res.status(404).send({ message: "No users found with the name " + name });
+            } else {
+                res.send(data);
+            }
+        })
+        .catch(err => {
+            res.status(500).send({ message: "Error retrieving users with name " + name });
+        });
+};
+

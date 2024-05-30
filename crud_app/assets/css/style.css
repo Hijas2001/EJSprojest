@@ -106,20 +106,23 @@ table {
     padding: 0.3em 1em;
     font-size: 1.1em;
     margin: 0.2em;
+    border-radius: 20px;
 }
 
 .table tr:hover {
-    background-color: #06d6a0;
+    background-color: #60c9af;
 }
 
 .table tr:hover td>a {
     box-shadow: none;
 }
 
+
 .table.thead-dark th {
     color: #fff;
     background-color: var(--dark);
-    border-color: rgb(18, 14, 41);
+    /* border-color: rgb(18, 14, 41); */
+    background-color: #69a797;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -270,7 +273,7 @@ table {
 #add_user .form-group .btn {
     width: 100%;
     padding: 0.9em 1em;
-    background-color: #16db93;
+    background-color:#69a797;
     border: none;
     font-family: 'PT Sans', sans-serif;
     font-size: 1em;
@@ -283,7 +286,7 @@ table {
 
 #update_user .form-group .btn:hover,
 #add_user .form-group .btn:hover {
-    background-color: var(--dark);
+    background-color: rgb(50, 94, 165);
     color: var(--border);
     /* Assuming you have a CSS variable for border color */
 
@@ -348,18 +351,20 @@ table {
 
 
 
-.searchinputuser{
-display: flex;
+.searchinputuser {
+    display: flex;
 }
-.searchinput{
+
+.searchinput {
     width: 300px;
     background-color: white;
     height: 42px;
     border-radius: 20px;
     border: solid 1px black;
 }
-.searchinput input{
-    width: 247px;
+
+.searchinput input {
+    width: 220px;
     height: 40px;
     border: none;
 
@@ -371,8 +376,36 @@ display: flex;
 input.inputitem:focus {
     border: none;
     outline: none;
-  }
+}
 
-.searchinput i{
-cursor: pointer;
+.searchinput i {
+    cursor: pointer;
+}
+
+.searchdisplay {
+    display: flex;
+    flex-direction: column;
+}
+
+.user-list {
+    display: block;
+    position: absolute;
+    top: 81px;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 20px;
+    width: 300px;
+    padding: 20px;
+}
+
+.searchicon {
+    width: 30px;
+    height: 30px;
+    margin: 0px 14px;
+    border-radius: 20px;
+    padding: 8px 7px;
+}
+
+.BackallUser{
+    margin-left: 766px;
 }

@@ -11,7 +11,7 @@ const connectDb =require('./server/database/connection')
 const app = express();
 
 dotenv.config({path:"config.env"})
-const PORT =process.env.PORT||8080;
+const PORT =process.env.PORT||8000;
 
 //log require 
 app.use(morgan("tiny"))

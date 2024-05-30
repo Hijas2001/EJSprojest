@@ -22,14 +22,16 @@ router.get('/add-user',services.add_use);
  * @method Get / update_user
  */
 router.get('/update-user', services.update_user);
+router.get('/search', services.search_user);
 
 //Api
 router.post('/api/users',controller.create);
 router.get('/api/users',controller.find);
-router.search('/api/users',controller.search);
 router.put('/api/users/:id',controller.update);
 router.delete('/api/users/:id',controller.delete);
 
+
+router.get('/api/users/search', controller.search);
 
 
 module.exports=router;
